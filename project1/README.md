@@ -19,7 +19,7 @@ docker run -it --name project1-robdd-container -v $(pwd):/workspace project1-rob
 clang++ -o robdd src/main.cpp
 
 # Run the program
-robdd <pla_file_path> <dot_file_path>
+./robdd <pla_file_path> <dot_file_path>
 ```
 
 ### WSL (or other linux environment)
@@ -39,5 +39,5 @@ RUN apt-get update && apt-get install -y \
 clang++ -o robdd src/main.cpp
 
 # Run the program
-robdd <pla_file_path> <dot_file_path>
+./robdd <pla_file_path> <dot_file_path>
 ```
