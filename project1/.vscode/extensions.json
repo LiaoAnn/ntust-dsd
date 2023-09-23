@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "joaompinto.vscode-graphviz",
+        "ms-vscode.cpptools",
+        "github.copilot",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cpptools-themes"
+    ]
+}
