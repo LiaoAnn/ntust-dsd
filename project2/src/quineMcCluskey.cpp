@@ -291,7 +291,11 @@ public:
         }
 
         if (trueColIndexs.size() == 0)
+        {
+            cout << "Total number of terms: " << essentialPrimeImplicants.size() << endl;
+            cout << "Total number of literals: " << 0 << endl;
             return;
+        }
 
         // create converageMatrix for Petrick's Method
         vector<int> trueColIndexVector(trueColIndexs.begin(), trueColIndexs.end());
@@ -314,6 +318,9 @@ public:
         {
             essentialPrimeImplicants.push_back(term);
         }
+
+        cout << "Total number of terms: " << essentialPrimeImplicants.size() << endl;
+        cout << "Total number of literals: " << petrickMethod.getNumberOfLiterals() << endl;
     }
 
     void outputPlaFile(const string &filename)
