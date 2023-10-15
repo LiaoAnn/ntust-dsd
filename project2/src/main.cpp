@@ -25,5 +25,8 @@ int main(int argc, char *argv[])
     qm.getEssentialPrimeImplicants();
     qm.outputPlaFile(outputFilename);
 
+    cout << "Total number of terms: " << qm.getTotalNumberOfTerms() << endl;
+    cout << "Total number of literals: " << qm.getTotalNumberOfLiterals() << endl;
+
     return 0;
 }

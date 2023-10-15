@@ -90,9 +90,4 @@ public:
             gerneateAllCombinations(petrickTable, newCurr, currIndex + 1);
         }
     }
-
-    int getNumberOfLiterals()
-    {
-        return combinations.size();
-    }
 };

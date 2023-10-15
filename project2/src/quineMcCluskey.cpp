@@ -291,11 +291,7 @@ public:
         }
 
         if (trueColIndexs.size() == 0)
-        {
-            cout << "Total number of terms: " << essentialPrimeImplicants.size() << endl;
-            cout << "Total number of literals: " << 0 << endl;
             return;
-        }
 
         // create converageMatrix for Petrick's Method
         vector<int> trueColIndexVector(trueColIndexs.begin(), trueColIndexs.end());
@@ -318,9 +314,6 @@ public:
         {
             essentialPrimeImplicants.push_back(term);
         }
-
-        cout << "Total number of terms: " << essentialPrimeImplicants.size() << endl;
-        cout << "Total number of literals: " << petrickMethod.getNumberOfLiterals() << endl;
     }
 
     void outputPlaFile(const string &filename)
@@ -354,6 +347,26 @@ public:
         file << ".e" << endl;
 
         file.close();
+    }
+
+    int getTotalNumberOfTerms() const
+    {
+        return essentialPrimeImplicants.size();
+    }
+
+    int getTotalNumberOfLiterals() const
+    {
+        set<string> literals;
+        for (auto &term : essentialPrimeImplicants)
+        {
+            for (int i = 0; i < term.input.size(); i++)
+            {
+                if (term.input[i] == '-')
+                    continue;
+                literals.insert(term.input[i] == '0' ? to_string(i) + "'" : to_string(i));
+            }
+        }
+        return literals.size();
     }
 
     // for testing
